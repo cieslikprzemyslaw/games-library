@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Form,
   Subtitle,
@@ -11,8 +11,16 @@ import {
   Arrow,
   SelectWithArrow,
 } from "./styles";
+import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
 
-const index = () => {
+const Home = () => {
+
+  const [sortDown, setSortDown] = useState(true)
+
+  const changeSorting = () => {
+    setSortDown(!sortDown);
+  }
+
   return (
     <Wrapper>
       <Form action="">
@@ -27,16 +35,16 @@ const index = () => {
         </ElementsWrapper>
         <ElementsWrapper>
           <Label htmlFor="order">Order By</Label>
-          <Arrow>
-            <span>-{">"}</span>
+          <Arrow onClick={changeSorting}>
+            {sortDown ? <AiOutlineArrowDown/> : <AiOutlineArrowUp/>}
           </Arrow>
           <SelectWithArrow name="" id="order"></SelectWithArrow>
         </ElementsWrapper>
         <Button>Clear</Button>
       </Form>
-      <section>api</section>
+      <section style={{width: "50%"}}>api</section>
     </Wrapper>
   );
 };
 
-export default index;
+export default Home;

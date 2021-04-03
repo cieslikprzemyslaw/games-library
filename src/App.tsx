@@ -1,18 +1,18 @@
-import { BrowserRouter as Router} from "react-router-dom";
-import Routes from './Routes';
-import Navigation from './components/Navigation';
+import { BrowserRouter as Router } from "react-router-dom";
+import Routes from "./Routes";
+import Navigation from "./components/Navigation";
 import GlobalStyles from "./assests/GlobalStyles";
-
+import { AppWrapper } from "./styles";
 
 function App() {
   return (
-    <div className="App">
-      <GlobalStyles/>
-        <Router>
-          <Navigation/>
-          <Routes/>
-        </Router>
-    </div>
+    <AppWrapper>
+      <GlobalStyles />
+      <Router>
+        <Navigation />
+        <Routes />
+      </Router>
+    </AppWrapper>
   );
 }
 

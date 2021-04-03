@@ -1,6 +1,8 @@
 import React from "react";
-import { ContactWrapper, TextSection, Title, Text, Star } from "./styles";
 import {
+  ContactWrapper,
+  TextSection,
+  Title,
   Form,
   Subtitle,
   ElementsWrapper,
@@ -8,9 +10,11 @@ import {
   Input,
   Textarea,
   Button,
-} from "../../assests/GlobalStyles/globalStylesItems";
+  Text,
+  Star,
+} from "./styles";
 
-const index = () => {
+const Contact = () => {
   return (
     <ContactWrapper>
       <TextSection>
@@ -48,4 +52,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Contact;
