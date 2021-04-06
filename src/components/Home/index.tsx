@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState} from "react";
 import {
   Form,
   Subtitle,
@@ -12,14 +12,18 @@ import {
   SelectWithArrow,
 } from "./styles";
 import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
+import useAsyncFetch from "../../services/useAsyncFetch";
+import ListOfGames from "./ListOfGames";
 
 const Home = () => {
+  const url = "https://public.connectnow.org.uk/applicant-test/";
+  const data = useAsyncFetch(url);
 
-  const [sortDown, setSortDown] = useState(true)
+  const [sortDown, setSortDown] = useState(true);
 
   const changeSorting = () => {
     setSortDown(!sortDown);
-  }
+  };
 
   return (
     <Wrapper>
@@ -36,13 +40,15 @@ const Home = () => {
         <ElementsWrapper>
           <Label htmlFor="order">Order By</Label>
           <Arrow onClick={changeSorting}>
-            {sortDown ? <AiOutlineArrowDown/> : <AiOutlineArrowUp/>}
+            {sortDown ? <AiOutlineArrowDown /> : <AiOutlineArrowUp />}
           </Arrow>
           <SelectWithArrow name="" id="order"></SelectWithArrow>
         </ElementsWrapper>
         <Button>Clear</Button>
       </Form>
-      <section style={{width: "50%"}}>api</section>
+      <ListOfGames
+        {...data}
+      />
     </Wrapper>
   );
 };

@@ -4,7 +4,6 @@ import { respondTo } from "../../assests/GlobalStyles/respondTo";
 
 export const ContactWrapper = styled.section`
   margin: 0 5vw;
-  width: 100%;
 
   ${respondTo.lg`
     display: flex;
