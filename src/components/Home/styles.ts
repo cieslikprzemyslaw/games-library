@@ -14,6 +14,7 @@ export const Wrapper = styled.section`
 
 export const Form = styled.form`
   border: 2px solid black;
+  height: 400px;
 
   ${respondTo.md`
   width: 80%;
