@@ -12,7 +12,7 @@ import {
   SelectWithArrow,
 } from "./styles";
 import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
-import ListOfGames from "./ListOfGames";
+import ListOfGames from "../../components/ListOfGames";
 
 const Home = () => {
 

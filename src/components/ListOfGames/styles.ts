@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { respondTo } from "../../../assests/GlobalStyles/respondTo";
+import { respondTo } from "../../assests/GlobalStyles/respondTo";
 
 
 export const DataWraper = styled.section`
