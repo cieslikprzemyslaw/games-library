@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import "./index.css";
-import { h1, h2, h3, p } from "./globalStylesItems";
+import { h1, h2, h3, HeadAndButtonColor, p } from "./globalStylesItems";
 
 export default createGlobalStyle`
 * {
@@ -19,8 +19,8 @@ html {
 body {
   font-family: Open Sans;
   font-size: 1.6rem ;
-  /* background: rgb(8,18,33);
-  background: linear-gradient(90deg, rgba(8,18,33,1) 0%, rgba(0,0,0,1) 100%); */
+  background: rgb(8,18,33);
+  background: linear-gradient(90deg, rgba(8,18,33,1) 0%, rgba(0,0,0,1) 100%);
   font-weight: 300 ;
   touch-action: manipulation;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -43,8 +43,7 @@ img {
     max-width: 100%;
     height: auto;
 }
-video {
-  width: 100%;
-  height: auto;
+button{
+  ${HeadAndButtonColor}
 }
 `;

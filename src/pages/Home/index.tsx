@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   Form,
   Subtitle,
@@ -15,21 +15,24 @@ import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
 import ListOfGames from "../../components/ListOfGames";
 
 const Home = () => {
-
-
   const [sortDown, setSortDown] = useState(true);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const changeSorting = () => {
     setSortDown((prev) => !prev);
   };
 
+  const handleName = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+  };
+
   return (
     <Wrapper>
-      <Form action="">
+      <Form>
         <Subtitle>Filter Results</Subtitle>
         <ElementsWrapper>
           <Label htmlFor="name">Name [contains]</Label>
-          <Input type="text" id="name" />
+          <Input type="text" id="name" onChange={handleName} />
         </ElementsWrapper>
         <ElementsWrapper>
           <Label htmlFor="score">Minimum Score</Label>
@@ -44,7 +47,9 @@ const Home = () => {
         </ElementsWrapper>
         <Button>Clear</Button>
       </Form>
-      <ListOfGames/>
+      <ListOfGames 
+        searchQuery={searchQuery}
+      />
     </Wrapper>
   );
 };

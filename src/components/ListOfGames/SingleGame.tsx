@@ -8,6 +8,7 @@ import {
   Paragraph,
   Score,
   Circle,
+  TitleWrapper,
 } from "./styles";
 
 const SingleGame = (props: TGame) => {
@@ -21,10 +22,10 @@ const SingleGame = (props: TGame) => {
       <Image></Image>
 
       <TextWrapper>
-        <>
+        <TitleWrapper>
           <Title>{props.name}</Title>
           <Paragraph>{props.first_release_date.toString()}</Paragraph>
-        </>
+        </TitleWrapper>
         <Paragraph>{summary}</Paragraph>
       </TextWrapper>
       <Circle>

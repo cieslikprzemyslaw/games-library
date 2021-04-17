@@ -20,11 +20,11 @@ export const useGamesList = () => {
       .then((response) => response.json())
       .then(handleResponse)
       .catch(console.error);
-  }, []);
+  }, [handleResponse]);
 
   useEffect(() => {
     fetchGames();
-  }, []);
+  }, [fetchGames]);
 
   return games as TGame[];
 };

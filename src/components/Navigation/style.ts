@@ -32,6 +32,7 @@ export const ListItem = styled(Link)`
   text-decoration: none;
   color: #030303;
   text-transform: uppercase;
+  color: #fff;
 
   ${respondTo.lg`
   margin: 0px 5vw;

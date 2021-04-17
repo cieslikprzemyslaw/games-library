@@ -1,5 +1,3 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
 import { Nav, UnorderList, ListItem, Wrapper } from "./style";
 
 const index = () => {

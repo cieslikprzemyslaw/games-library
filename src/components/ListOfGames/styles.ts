@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { backgroundCardAndPanel } from "../../assests/GlobalStyles/globalStylesItems";
 import { respondTo } from "../../assests/GlobalStyles/respondTo";
 
 export const DataWraper = styled.section`
@@ -16,6 +17,7 @@ export const GameArticle = styled.article`
   display: flex;
   flex-direction: column;
   position: relative;
+  ${backgroundCardAndPanel}
 
   ${respondTo.md`
       flex-direction: row;
@@ -61,12 +63,11 @@ export const Circle = styled.section`
   justify-content: center;
   align-items: center;
 
-  background-color: #fff;
   position: absolute;
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  background-color: #4bb5fc;
+  background-color: #5692e8;
   top: 20px;
   right: 20px;
   font-size: 14px;
@@ -78,3 +79,5 @@ export const Circle = styled.section`
       margin: 20px;
   `}
 `;
+
+export const TitleWrapper = styled.section``;
