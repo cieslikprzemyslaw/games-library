@@ -13,9 +13,9 @@ export const h1 = () => css`
 `;
 
 export const h2 = () => css`
-  font-size: 24px;
+  font-size: 20px;
   ${respondTo.xxl`
-       font-size: 33px; 
+       font-size: 25px; 
     `}
 `;
 
@@ -28,9 +28,6 @@ export const h3 = () => css`
 
 export const p = () => css`
   font-size: 16px;
-  ${respondTo.xxl`
-       font-size: 24px; 
-    `}
 `;
 
 export const marginInForm = () => css`

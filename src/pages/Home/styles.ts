@@ -14,13 +14,14 @@ export const Wrapper = styled.section`
 
 export const Form = styled.form`
   border: 2px solid black;
-  height: 400px;
+  height: 300px;
 
   ${respondTo.md`
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
 
   section:nth-child(3) {
     width: 25%;
@@ -94,8 +95,8 @@ export const Button = styled.button`
 
   ${respondTo.md`
     width: 70px;
-    display: flex;
-    align-self: flex-end;
+    align-self: center;
+    margin-top: 10px;
   `}
 `;
 
