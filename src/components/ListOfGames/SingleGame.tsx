@@ -24,7 +24,6 @@ const SingleGame = (props: TGame) => {
       <TextWrapper>
         <TitleWrapper>
           <Title>{props.name}</Title>
-          <Paragraph>{props.first_release_date.toString()}</Paragraph>
         </TitleWrapper>
         <Paragraph>{summary}</Paragraph>
       </TextWrapper>

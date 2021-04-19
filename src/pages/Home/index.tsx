@@ -20,6 +20,7 @@ const Home = () => {
   const history = useHistory();
   const [sortDown, setSortDown] = useState(true);
   const [score, setScore] = useState("10");
+  const [order, setOrder] = useState("name")
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
@@ -36,6 +37,10 @@ const Home = () => {
 
   const handleScore = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setScore(e.target.value);
+  };
+
+  const handleOrder = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setOrder(e.target.value);
   };
 
   return (
@@ -59,15 +64,18 @@ const Home = () => {
           <Arrow onClick={changeSorting}>
             {sortDown ? <AiOutlineArrowDown /> : <AiOutlineArrowUp />}
           </Arrow>
-          <SelectWithArrow name="" id="order">
-            <Option value="">Name</Option>
-            <Option value="">Score</Option>
-            <Option value="">Date</Option>
+          <SelectWithArrow value={order} id="order" onChange={handleOrder}>
+            <Option value="name">Name</Option>
+            <Option value="score">Score</Option>
           </SelectWithArrow>
         </ElementsWrapper>
         <Button>Clear</Button>
       </Form>
-      <ListOfGames searchQuery={searchQuery} />
+      <ListOfGames 
+      searchQuery={searchQuery} 
+      score={score}
+      order={order}
+      />
     </Wrapper>
   );
 };

@@ -5,6 +5,8 @@ import { useGamesList } from "../../Hooks";
 
 type ListOfGamesProps = {
   searchQuery: string;
+  score: string;
+  order: string;
 }
 
 const ListOfGames = (props: ListOfGamesProps) => {
