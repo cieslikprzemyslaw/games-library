@@ -84,6 +84,7 @@ export const Select = styled.select`
   width: 100%;
   height: 25px;
   background-color: #182c47;
+  color: #fff;
 `;
 
 export const SelectWithArrow = styled(Select)`
@@ -112,5 +113,12 @@ export const Arrow = styled.section`
   width: 10%;
   height: 25px;
   background-color: #5692e8;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Option = styled.option`
   color: #fff;
 `;
