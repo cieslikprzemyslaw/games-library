@@ -8,6 +8,7 @@ function Routes() {
       <>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path="/video" component={Home} />
           <Route path="/contact" component={Contact} />
         </Switch>
       </>

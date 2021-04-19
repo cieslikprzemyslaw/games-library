@@ -10,7 +10,11 @@ type ListOfGamesProps = {
 const ListOfGames = (props: ListOfGamesProps) => {
   const gamesList: TGame[] = useGamesList();
 
-  return <DataWraper>{gamesList.filter(filterGames(props.searchQuery)).map(mapGameToComponent)}</DataWraper>;
+  return (
+    <DataWraper>
+      {gamesList.filter(filterGames(props.searchQuery)).map(mapGameToComponent)}
+    </DataWraper>
+  );
 };
 
 const mapGameToComponent = (game: TGame) => <SingleGame key={game.id} {...game} />;

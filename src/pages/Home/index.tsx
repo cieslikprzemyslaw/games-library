@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Form,
   Subtitle,
@@ -10,13 +10,21 @@ import {
   Wrapper,
   Arrow,
   SelectWithArrow,
+  Option,
 } from "./styles";
 import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
 import ListOfGames from "../../components/ListOfGames";
+import { useHistory } from "react-router";
 
 const Home = () => {
+  const history = useHistory();
   const [sortDown, setSortDown] = useState(true);
+  const [score, setScore] = useState("10");
   const [searchQuery, setSearchQuery] = useState("");
+
+  useEffect(() => {
+    history.push("/video");
+  }, []);
 
   const changeSorting = () => {
     setSortDown((prev) => !prev);
@@ -24,6 +32,10 @@ const Home = () => {
 
   const handleName = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
+  };
+
+  const handleScore = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setScore(e.target.value);
   };
 
   return (
@@ -36,20 +48,26 @@ const Home = () => {
         </ElementsWrapper>
         <ElementsWrapper>
           <Label htmlFor="score">Minimum Score</Label>
-          <Select name="" id="score"></Select>
+          <Select value={score} id="score" onChange={handleScore}>
+            <Option value="10">1-10</Option>
+            <Option value="25">1-25</Option>
+            <Option value="50">1-50</Option>
+          </Select>
         </ElementsWrapper>
         <ElementsWrapper>
           <Label htmlFor="order">Order By</Label>
           <Arrow onClick={changeSorting}>
             {sortDown ? <AiOutlineArrowDown /> : <AiOutlineArrowUp />}
           </Arrow>
-          <SelectWithArrow name="" id="order"></SelectWithArrow>
+          <SelectWithArrow name="" id="order">
+            <Option value="">Name</Option>
+            <Option value="">Score</Option>
+            <Option value="">Date</Option>
+          </SelectWithArrow>
         </ElementsWrapper>
         <Button>Clear</Button>
       </Form>
-      <ListOfGames 
-        searchQuery={searchQuery}
-      />
+      <ListOfGames searchQuery={searchQuery} />
     </Wrapper>
   );
 };
