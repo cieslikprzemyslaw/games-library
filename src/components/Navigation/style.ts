@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { respondTo } from "../../assests/GlobalStyles/respondTo";
 
 export const Wrapper = styled.section`
@@ -26,9 +26,10 @@ export const UnorderList = styled.ul`
   justify-content: flex-start;
   align-items: center;
   `}
+  
 `;
 
-export const ListItem = styled(Link)`
+export const ListItem = styled(NavLink)`
   text-decoration: none;
   color: #030303;
   text-transform: uppercase;

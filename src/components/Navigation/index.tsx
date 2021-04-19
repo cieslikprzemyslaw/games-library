@@ -5,8 +5,20 @@ const index = () => {
       <Wrapper>
         <Nav>
           <UnorderList>
-            <ListItem to="/">video games</ListItem>
-            <ListItem to="/contact">contact</ListItem>
+            <ListItem
+              to="/video"
+              activeStyle={{
+                textShadow: "-18px -18px 2px #FFFFFF",
+              }}
+            >
+              video games
+            </ListItem>
+            <ListItem
+              to="/contact"
+              activeStyle={{ textShadow: "18px -18px 2px #FFFFFF" }}
+            >
+              contact
+            </ListItem>
           </UnorderList>
         </Nav>
       </Wrapper>
