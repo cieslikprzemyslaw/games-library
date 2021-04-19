@@ -19,8 +19,8 @@ import { useHistory } from "react-router";
 const Home = () => {
   const history = useHistory();
   const [sortDown, setSortDown] = useState(true);
-  const [score, setScore] = useState("10");
-  const [order, setOrder] = useState("name")
+  const [volume, setVolume] = useState(10);
+  const [order, setOrder] = useState<"name" | "rate">("name");
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
@@ -35,12 +35,12 @@ const Home = () => {
     setSearchQuery(e.target.value);
   };
 
-  const handleScore = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setScore(e.target.value);
+  const handleVolume = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setVolume(+e.target.value);
   };
 
   const handleOrder = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setOrder(e.target.value);
+    setOrder(e.target.value as "name" | "rate");
   };
 
   return (
@@ -53,10 +53,10 @@ const Home = () => {
         </ElementsWrapper>
         <ElementsWrapper>
           <Label htmlFor="score">Minimum Score</Label>
-          <Select value={score} id="score" onChange={handleScore}>
-            <Option value="10">1-10</Option>
-            <Option value="25">1-25</Option>
-            <Option value="50">1-50</Option>
+          <Select value={volume} id="score" onChange={handleVolume}>
+            <Option value={10}>1-10</Option>
+            <Option value={25}>1-25</Option>
+            <Option value={50}>1-50</Option>
           </Select>
         </ElementsWrapper>
         <ElementsWrapper>
@@ -66,16 +66,12 @@ const Home = () => {
           </Arrow>
           <SelectWithArrow value={order} id="order" onChange={handleOrder}>
             <Option value="name">Name</Option>
-            <Option value="score">Score</Option>
+            <Option value="rate">Rate</Option>
           </SelectWithArrow>
         </ElementsWrapper>
         <Button>Clear</Button>
       </Form>
-      <ListOfGames 
-      searchQuery={searchQuery} 
-      score={score}
-      order={order}
-      />
+      <ListOfGames searchQuery={searchQuery} volume={volume} order={order} sortDescending={sortDown} />
     </Wrapper>
   );
 };
